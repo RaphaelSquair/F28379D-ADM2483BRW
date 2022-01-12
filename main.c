@@ -98,23 +98,28 @@ void main(void)
 
     // GPIO62 is the SCI Rx-485 pin that goes to the rs-485 chip.
     //
-    GPIO_setMasterCore(62, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_62_SCIRXDC);
-    GPIO_setDirectionMode(62, GPIO_DIR_MODE_IN);
-    GPIO_setPadConfig(62, GPIO_PIN_TYPE_STD);
-    GPIO_setQualificationMode(62, GPIO_QUAL_ASYNC);
+    GPIO_setMasterCore(DEVICE_GPIO_PIN_SCIRXDC, GPIO_CORE_CPU1);
+    GPIO_setPinConfig(DEVICE_GPIO_CFG_SCIRXDC);
+    GPIO_setDirectionMode(DEVICE_GPIO_PIN_SCIRXDC, GPIO_DIR_MODE_IN);
+    GPIO_setPadConfig(DEVICE_GPIO_PIN_SCIRXDC, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(DEVICE_GPIO_PIN_SCIRXDC, GPIO_QUAL_ASYNC);
 
     //
     // GPIO63 is the SCI Tx-485 pin that goes to the rs-485 chip.
     //
-    GPIO_setMasterCore(63, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_63_SCITXDC);
-    GPIO_setDirectionMode(63, GPIO_DIR_MODE_OUT);
-    GPIO_setPadConfig(63, GPIO_PIN_TYPE_STD);
-    GPIO_setQualificationMode(63, GPIO_QUAL_ASYNC);
+    GPIO_setMasterCore(DEVICE_GPIO_PIN_SCITXDC, GPIO_CORE_CPU1);
+    GPIO_setPinConfig(DEVICE_GPIO_CFG_SCITXDC);
+    GPIO_setDirectionMode(DEVICE_GPIO_PIN_SCITXDC, GPIO_DIR_MODE_OUT);
+    GPIO_setPadConfig(DEVICE_GPIO_PIN_SCITXDC, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(DEVICE_GPIO_PIN_SCITXDC, GPIO_QUAL_ASYNC);
 
     //
+    //the ADM2483BRW requires a enable pin to be set to high before sending the packet.
     //
+    GPIO_setPadConfig(DEVICE_GPIO_PIN_DIR, GPIO_PIN_TYPE_STD);
+    GPIO_setDirectionMode(DEVICE_GPIO_CFG_DIR, GPIO_DIR_MODE_OUT);
+    GPIO_setPadConfig(DEVICE_GPIO_PIN_EN, GPIO_PIN_TYPE_STD);
+    GPIO_setDirectionMode(DEVICE_GPIO_CFG_EN, GPIO_DIR_MODE_OUT);
 
 
 

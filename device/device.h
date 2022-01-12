@@ -63,8 +63,8 @@ a single CPU should be defined."
 //
 // LEDs
 //
-#define DEVICE_GPIO_PIN_LED1        31U  // GPIO number for LD2
-#define DEVICE_GPIO_PIN_LED2        34U  // GPIO number for LD3
+#define DEVICE_GPIO_PIN_LED1        31U             // GPIO number for LD2
+#define DEVICE_GPIO_PIN_LED2        34U             // GPIO number for LD3
 #define DEVICE_GPIO_CFG_LED1        GPIO_31_GPIO31  // "pinConfig" for LD2
 #define DEVICE_GPIO_CFG_LED2        GPIO_34_GPIO34  // "pinConfig" for LD3
 
@@ -75,6 +75,20 @@ a single CPU should be defined."
 #define DEVICE_GPIO_PIN_SCITXDA     29U             // GPIO number for SCI TX
 #define DEVICE_GPIO_CFG_SCIRXDA     GPIO_28_SCIRXDA // "pinConfig" for SCI RX
 #define DEVICE_GPIO_CFG_SCITXDA     GPIO_29_SCITXDA // "pinConfig" for SCI TX
+
+
+//
+// SCI for rs-485 using the ADM2483BRW chip
+//
+#define DEVICE_GPIO_PIN_SCIRXDC     62U             // GPIO number for SCI RX
+#define DEVICE_GPIO_PIN_SCITXDC     63U             // GPIO number for SCI TX
+#define DEVICE_GPIO_PIN_DIR         64U             // GPIO number for DIR
+#define DEVICE_GPIO_PIN_EN          65U             // GPIO number for LD3
+
+#define DEVICE_GPIO_CFG_SCIRXDC     GPIO_62_SCIRXDC // "pinConfig" for SCI RX
+#define DEVICE_GPIO_CFG_SCITXDC     GPIO_63_SCITXDC // "pinConfig" for SCI TX
+#define DEVICE_GPIO_CFG_DIR         GPIO_64_GPIO64  // "pinConfig" for DIR
+#define DEVICE_GPIO_CFG_EN          GPIO_65_GPIO65  // "pinConfig" for LD3
 
 //
 // CANA
